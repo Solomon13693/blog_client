@@ -1,0 +1,62 @@
+[
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8d6",
+        "name": "Technology",
+        "post_count": 12,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8d7",
+        "name": "Health",
+        "post_count": 8,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8d8",
+        "name": "Travel",
+        "post_count": 5,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8d9",
+        "name": "Education",
+        "post_count": 15,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8da",
+        "name": "Finance",
+        "post_count": 10,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8db",
+        "name": "Lifestyle",
+        "post_count": 7,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8dc",
+        "name": "Food",
+        "post_count": 6,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8dd",
+        "name": "Sports",
+        "post_count": 9,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8de",
+        "name": "Entertainment",
+        "post_count": 11,
+        "image": "/public/images/category.jpg"
+    },
+    {
+        "id": "64b6b2c5b8f5f5f5f5b9c8df",
+        "name": "Fashion",
+        "post_count": 4,
+        "image": "/public/images/category.jpg"
+    }
+]

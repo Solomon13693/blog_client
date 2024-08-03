@@ -1,0 +1,134 @@
+[
+    {
+        "title": "Exploring Next.js for Modern Web Development",
+        "slug": "exploring-nextjs",
+        "author": "Jane Doe",
+        "body": "Next.js is a powerful framework built on top of React...",
+        "time": "5 min read",
+        "views": 1200,
+        "comments_count": 15,
+        "created_at": "2024-07-01T10:00:00Z",
+        "category": "Web Development"
+    },
+    {
+        "title": "A Deep Dive into Node.js Performance",
+        "slug": "deep-dive-nodejs-performance",
+        "author": "John Smith",
+        "body": "Node.js provides an event-driven architecture and non-blocking I/O...",
+        "time": "7 min read",
+        "views": 850,
+        "comments_count": 8,
+        "created_at": "2024-06-28T14:00:00Z",
+        "category": "Backend Development"
+    },
+    {
+        "title": "Introduction to MongoDB for Beginners",
+        "slug": "introduction-to-mongodb",
+        "author": "Alice Johnson",
+        "body": "MongoDB is a popular NoSQL database known for its flexibility...",
+        "time": "6 min read",
+        "views": 950,
+        "comments_count": 10,
+        "created_at": "2024-07-05T09:30:00Z",
+        "category": "Database"
+    },
+    {
+        "title": "Mastering CSS Grid Layout",
+        "slug": "mastering-css-grid",
+        "author": "Emily Davis",
+        "body": "CSS Grid Layout is a two-dimensional layout system for the web...",
+        "time": "8 min read",
+        "views": 1100,
+        "comments_count": 12,
+        "created_at": "2024-06-25T16:00:00Z",
+        "category": "CSS"
+    },
+    {
+        "title": "Building RESTful APIs with Express",
+        "slug": "building-restful-apis-express",
+        "author": "Michael Brown",
+        "body": "Express is a minimal and flexible Node.js web application framework...",
+        "time": "9 min read",
+        "views": 1300,
+        "comments_count": 18,
+        "created_at": "2024-07-03T12:00:00Z",
+        "category": "Backend Development"
+    },
+    {
+        "title": "Understanding React Hooks",
+        "slug": "understanding-react-hooks",
+        "author": "Sophia Williams",
+        "body": "React Hooks allow you to use state and other React features...",
+        "time": "10 min read",
+        "views": 1400,
+        "comments_count": 20,
+        "created_at": "2024-06-29T08:00:00Z",
+        "category": "React"
+    },
+    {
+        "title": "Getting Started with TypeScript",
+        "slug": "getting-started-typescript",
+        "author": "Oliver Taylor",
+        "body": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript...",
+        "time": "4 min read",
+        "views": 700,
+        "comments_count": 5,
+        "created_at": "2024-07-07T14:30:00Z",
+        "category": "JavaScript"
+    },
+    {
+        "title": "Effective State Management in React with Redux",
+        "slug": "state-management-react-redux",
+        "author": "Ava Martinez",
+        "body": "Redux is a predictable state container for JavaScript apps...",
+        "time": "12 min read",
+        "views": 1600,
+        "comments_count": 25,
+        "created_at": "2024-07-02T11:00:00Z",
+        "category": "React"
+    },
+    {
+        "title": "Building Scalable Microservices",
+        "slug": "building-scalable-microservices",
+        "author": "Liam Thompson",
+        "body": "Microservices architecture is a design pattern that structures an application...",
+        "time": "15 min read",
+        "views": 1800,
+        "comments_count": 30,
+        "created_at": "2024-06-30T15:00:00Z",
+        "category": "Architecture"
+    },
+    {
+        "title": "Deploying Applications with Docker",
+        "slug": "deploying-applications-docker",
+        "author": "Mia Garcia",
+        "body": "Docker is an open platform for developing, shipping, and running applications...",
+        "time": "11 min read",
+        "views": 1750,
+        "comments_count": 22,
+        "created_at": "2024-07-04T10:00:00Z",
+        "category": "DevOps"
+    },
+    {
+        "title": "Exploring GraphQL for API Development",
+        "slug": "exploring-graphql-api",
+        "author": "James Wilson",
+        "body": "GraphQL is a query language for your API, and a server-side runtime...",
+        "time": "7 min read",
+        "views": 1150,
+        "comments_count": 13,
+        "created_at": "2024-06-26T13:00:00Z",
+        "category": "API Development"
+    },
+    {
+        "title": "Securing Web Applications with OAuth 2.0",
+        "slug": "securing-web-apps-oauth",
+        "author": "Charlotte Martinez",
+        "body": "OAuth 2.0 is the industry-standard protocol for authorization...",
+        "time": "8 min read",
+        "views": 1250,
+        "comments_count": 17,
+        "created_at": "2024-07-06T09:00:00Z",
+        "category": "Security"
+    }
+]

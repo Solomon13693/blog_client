@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "title": "The Ultimate Guide to JavaScript",
+        "content": "JavaScript is a versatile language with many uses. In this guide, we explore its core concepts and advanced features.",
+        "author": "John Doe",
+        "status": "Published",
+        "image": "https://example.com/images/js-guide.jpg",
+        "slug": "ultimate-guide-to-javascript",
+        "created_at": "2024-07-20T10:00:00Z",
+        "updated_at": "2024-07-21T12:00:00Z",
+        "views": 1200,
+        "publication_date": "2024-07-22T00:00:00Z",
+        "category": "Programming"
+    },
+    {
+        "id": 2,
+        "title": "Understanding React Hooks",
+        "content": "React Hooks are a way to use state and other React features without writing a class. This post explains the most commonly used hooks.",
+        "author": "Jane Smith",
+        "status": "Draft",
+        "image": "https://example.com/images/react-hooks.jpg",
+        "slug": "understanding-react-hooks",
+        "created_at": "2024-07-21T09:00:00Z",
+        "updated_at": "2024-07-21T11:00:00Z",
+        "views": 350,
+        "publication_date": null,
+        "category": "Frontend Development"
+    },
+    {
+        "id": 3,
+        "title": "A Beginner's Guide to Node.js",
+        "content": "Node.js is a runtime built on Chrome's V8 JavaScript engine. Learn the basics of building server-side applications with Node.js.",
+        "author": "Alice Johnson",
+        "status": "Published",
+        "image": "https://example.com/images/nodejs-guide.jpg",
+        "slug": "beginners-guide-to-nodejs",
+        "created_at": "2024-07-22T08:00:00Z",
+        "updated_at": "2024-07-22T10:00:00Z",
+        "views": 800,
+        "publication_date": "2024-07-23T00:00:00Z",
+        "category": "Backend Development"
+    },
+    {
+        "id": 4,
+        "title": "Advanced CSS Techniques",
+        "content": "Explore advanced CSS techniques to make your web designs stand out, including flexbox, grid layout, and animations.",
+        "author": "John Doe",
+        "status": "Published",
+        "image": "https://example.com/images/css-techniques.jpg",
+        "slug": "advanced-css-techniques",
+        "created_at": "2024-07-23T07:00:00Z",
+        "updated_at": "2024-07-23T09:00:00Z",
+        "views": 500,
+        "publication_date": "2024-07-24T00:00:00Z",
+        "category": "Design"
+    },
+    {
+        "id": 5,
+        "title": "Introduction to TypeScript",
+        "content": "TypeScript adds optional static typing to JavaScript, improving code quality and maintainability. This post covers the basics.",
+        "author": "Jane Smith",
+        "status": "Scheduled",
+        "image": "https://example.com/images/typescript-intro.jpg",
+        "slug": "introduction-to-typescript",
+        "created_at": "2024-07-24T06:00:00Z",
+        "updated_at": "2024-07-24T08:00:00Z",
+        "views": 450,
+        "publication_date": "2024-07-25T00:00:00Z",
+        "category": "Programming"
+    }
+]

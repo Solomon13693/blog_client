@@ -1,0 +1,6 @@
+[
+    { "label": "All", "count": 32 },
+    { "label": "Draft", "count": 16 },
+    { "label": "Published", "count": 50 },
+    { "label": "Scheduled", "count": 2 }
+]

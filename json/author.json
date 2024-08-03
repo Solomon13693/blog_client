@@ -1,0 +1,42 @@
+[
+    {
+        "author": "John Doe",
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "phone": "123-456-7890",
+        "status": "active",
+        "number_of_posts": 25
+    },
+    {
+        "author": "Jane Smith",
+        "name": "Jane Smith",
+        "email": "janesmith@example.com",
+        "phone": "098-765-4321",
+        "status": "banned",
+        "number_of_posts": 10
+    },
+    {
+        "author": "Emily Johnson",
+        "name": "Emily Johnson",
+        "email": "emilyj@example.com",
+        "phone": "555-123-4567",
+        "status": "active",
+        "number_of_posts": 18
+    },
+    {
+        "author": "Michael Brown",
+        "name": "Michael Brown",
+        "email": "michaelb@example.com",
+        "phone": "444-987-6543",
+        "status": "banned",
+        "number_of_posts": 5
+    },
+    {
+        "author": "Sarah Davis",
+        "name": "Sarah Davis",
+        "email": "sarahd@example.com",
+        "phone": "333-654-3210",
+        "status": "active",
+        "number_of_posts": 30
+    }
+]
