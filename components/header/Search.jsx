@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
 
 const Search = ({ open, setOpen }) => {
-    
     const [search, setSearch] = useState('');
-    const router = useRouter(); 
+    const router = useRouter();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const query = search.trim().replace(/\s+/g, '+'); 
-        router.push(`/search?s=${query}`); 
+        const query = search.trim().replace(/\s+/g, '+');
+        router.push(`/search?s=${query}`);
+        setOpen(false)
     };
 
     return (
@@ -20,7 +20,7 @@ const Search = ({ open, setOpen }) => {
                     <span className="jl_close_2"></span>
                 </span>
             </div>
-            <form method="get" className="searchform_theme" action="#" onSubmit={handleSubmit}>
+            <form method="get" className="searchform_theme" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Search..."

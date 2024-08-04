@@ -1,12 +1,16 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import Category from '@/public/images/category.jpg';
 import { EachElement } from '@/utils/Each';
 import Link from 'next/link';
 import moment from 'moment';
-import categories from '@/json/categories'
+import { useDispatch, useSelector } from 'react-redux';
+import { getCategories, getLoading } from '@/redux/features/slices/categorySlice';
+import { fetchRecentPosts, fetchUserCategory } from '@/redux/features/thunks/othersThunk';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import { getRecentLoading, getRecentPost } from '@/redux/features/slices/recentPostSlice';
 
-const BlogSideBar = ({ posts }) => {
+const BlogSideBar = () => {
 
   const [isSticky, setIsSticky] = useState(false);
 
@@ -28,6 +32,19 @@ const BlogSideBar = ({ posts }) => {
   //   };
   // }, []);
 
+  const dispatch = useDispatch();
+  const categories = useSelector(getCategories);
+  const loading = useSelector(getLoading);
+
+  // RECENT POSTS
+  const posts = useSelector(getRecentPost);
+  const isLoading = useSelector(getRecentLoading);
+
+  useEffect(() => {
+    dispatch(fetchUserCategory());
+    dispatch(fetchRecentPosts())
+  }, [dispatch]);
+
   return (
     <div className="col-md-4" id="sidebar" style={{
       position: 'relative',
@@ -43,22 +60,30 @@ const BlogSideBar = ({ posts }) => {
 
             <div className="category_image_wrapper_main">
 
-              <EachElement of={categories.slice(0, 5)} render={(item, index) => (
+              {loading ? (
 
-                <div
-                  className="category_image_bg_image"
-                  style={{ backgroundImage: `url(${Category.src})` }}
-                >
-                  <Link className="category_image_link" id="category_color_2" href={`/category/${item.id}`}>
-                    <span className="jl_cm_overlay">
-                      <span className="jl_cm_name"> { item.name } </span>
-                      <span className="jl_cm_count"> { item.post_count } </span>
-                    </span>
-                  </Link>
-                  <div className="category_image_bg_overlay" style={{ background: '#ed1c1c' }}></div>
-                </div>
+                <Skeleton height={50} count={7} />
 
-              )} />
+              ) : (
+
+                <EachElement of={categories?.slice(0, 5)} render={(item, index) => (
+
+                  <div
+                    className="category_image_bg_image"
+                    style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_CATEGORY}/${item.image})` }}
+                  >
+                    <Link className="category_image_link" id="category_color_2" href={`/category/${item.name.toLowerCase().replace(/ /g, '+')}`}>
+                      <span className="jl_cm_overlay">
+                        <span className="jl_cm_name"> {item.name} </span>
+                        <span className="jl_cm_count"> {item.postCount} </span>
+                      </span>
+                    </Link>
+                    <div className="category_image_bg_overlay" style={{ background: '#ed1c1c' }}></div>
+                  </div>
+
+                )} />
+
+              )}
 
             </div>
 
@@ -76,14 +101,14 @@ const BlogSideBar = ({ posts }) => {
             </div>
             <div>
               <ul className="feature-post-list recent-post-widget">
-                <EachElement of={posts.slice(0, 3)} render={(item, index) => (
+                <EachElement of={posts} render={(item, index) => (
                   <li key={index}>
                     <Link href={`/post/${item.slug}`} className="jl_small_format feature-image-link image_post featured-thumbnail" title={item.title}>
                       <img
                         width="120"
                         height="120"
-                        src='https://jellywp.com/theme/disto/demo/wp-content/uploads/2019/02/sawyer-bengtson-1331688-unsplash-120x120.jpg'
-                        className="attachment-disto_small_feature size-disto_small_feature wp-post-image"
+                        src={`${process.env.NEXT_PUBLIC_POST}/${item.image}`}
+                        className="attachment-disto_small_feature recent_post_image size-disto_small_feature wp-post-image"
                         alt=""
                       />
                       <div className="background_over_image"></div>
@@ -91,14 +116,14 @@ const BlogSideBar = ({ posts }) => {
 
                     <div className="item-details">
                       <span className="meta-category-small">
-                        <Link className="post-category-color-text" style={{ background: '#d800f9' }} href={`/category/${item.category}`}> {item.category} </Link>
+                        <Link className="post-category-color-text" style={{ background: '#d800f9' }} href={`/category/${item.category.name.toLowerCase().replace(/ /g, '+')}`}> {item.category.name} </Link>
                       </span>
                       <h3 className="feature-post-title">
-                        <Link href={`/post/${item.slug}`}> {item.title} </Link>
+                        <Link className=' line-clamp-1' href={`/post/${item.slug}`}> {item.title} </Link>
                       </h3>
                       <span className="post-meta meta-main-img auto_image_with_date">
                         <span className="post-date">
-                          <i className="fa fa-clock-o"></i> {moment(item.created_at).format('lll')}
+                          <i className="fa fa-clock-o"></i> {moment(item.createdAt).format('lll')}
                         </span>
                       </span>
                     </div>

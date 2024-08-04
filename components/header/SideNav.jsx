@@ -20,8 +20,7 @@ const SideNav = ({ open, setOpen, categories }) => {
 
                     <EachElement of={categories.slice(0, 10)} render={(item, index) => (
 
-
-                        <li className="menu-item"> <Link href={`/category/${item.id}`}> {item.name} <span className="border-menu"></span></Link>
+                        <li className="menu-item"> <Link href={`/category/${item.name.toLowerCase().replace(/ /g, '+')}`}> {item.name} <span className="border-menu"></span></Link>
                         </li>
 
                     )} />
@@ -32,9 +31,9 @@ const SideNav = ({ open, setOpen, categories }) => {
 
                 <ul className="menu_moble_slide " style={{ padding: '0 20px' }}>
 
-                    <Link href="/dashboard" class="jl_btn_load w-full" style={{ marginTop: '10px', width: '100%' }}>Write</Link>
+                    <a href="/dashboard" class="jl_btn_load w-full" style={{ marginTop: '10px', width: '100%' }}>Write</a>
 
-                    <Link href="/auth/signin" class="jl_btn_load w-full" style={{ marginTop: '10px', width: '100%' }}>Sign In</Link>
+                    <a href="/auth/signin" class="jl_btn_load w-full" style={{ marginTop: '10px', width: '100%' }}>Sign In</a>
 
                 </ul>
 

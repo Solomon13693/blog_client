@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const TopBar = () => {
@@ -30,11 +29,11 @@ const TopBar = () => {
                             <ul id="jl_top_menu" className="jl_main_menu">
 
                                 <li className="menu-item menu-item-home">
-                                    <Link href="/dashboard" aria-current="Write">Write<span className="border-menu"></span></Link>
+                                    <a href="/dashboard" aria-current="Write">Write<span className="border-menu"></span></a>
                                 </li>
 
                                 <li className="menu-item menu-item-3602">
-                                    <Link href="/auth/signin">Sign In<span className="border-menu"></span></Link>
+                                    <a href="/auth/signin">Sign In<span className="border-menu"></span></a>
                                 </li>
 
                             </ul>

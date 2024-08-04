@@ -5,10 +5,9 @@ import TopBar from './TopBar'
 import Link from 'next/link'
 import Search from './Search'
 import SideNav from './SideNav'
-import categories from '@/json/categories'
 import { EachElement } from '@/utils/Each'
 
-const Header = () => {
+const Header = ({ loading, categories }) => {
 
     const [searchOpen, setSearchOpen] = useState(false)
     const [open, setOpen] = useState(false)
@@ -38,14 +37,14 @@ const Header = () => {
                                 </div>
 
                                 <div className="menu-primary-container navigation_wrapper">
-                                    <ul id="mainmenu" className="jl_main_menu">
+                                    <ul id="mainmenu" className="jl_main_menu" style={{ display: 'inline-flex', alignItems: 'center' }}>
 
                                         <li className="menu-item"> <Link href="/">Home<span className="border-menu"></span></Link>
                                         </li>
 
                                         <EachElement of={categories.slice(0, 5)} render={(item, index) => (
 
-                                            <li className="menu-item"> <Link href={`/category/${item.id}`}> { item.name } <span className="border-menu"></span></Link>
+                                            <li className="menu-item"> <Link href={`/category/${item.name.toLowerCase().replace(/ /g, '+')}`}> {item.name} <span className="border-menu"></span></Link>
                                             </li>
 
                                         )} />

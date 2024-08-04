@@ -1,10 +1,29 @@
+'use client'
 import BlogSideBar from '@/components/Blog/BlogSideBar';
-import posts from '@/json/posts.json'
 import BlogCard from '@/components/Blog/BlogCard';
 import { EachElement } from '@/utils/Each';
 import UserLayout from '@/app/UserLayout';
+import userServices from '@/services/userServices';
+import useFetchData from '@/utils/useFetchData';
 
-export default function Home() {
+export default function page({ params }) {
+
+    const { id } = params
+
+    const decodedSlug = decodeURIComponent(id);
+    const formattedSlug = decodedSlug.replace(/\+/g, ' ');
+
+    const category = { author: formattedSlug }
+
+    const fetchFunction = (id) => userServices.getPosts(category);
+
+    const { data, loading, error, refetch } = useFetchData(fetchFunction,
+        [id],
+        [id]
+    );
+
+    const posts = data?.posts;
+
     return (
         <UserLayout>
 
@@ -16,8 +35,10 @@ export default function Home() {
                         <div class="row">
                             <div class="col-md-12 main_title_col">
                                 <div class="jl_cat_mid_title">
-                                    <h3 class="categories-title title">Gaming</h3>
-                                    <p>Sample category description goes here</p>
+                                    <h3 class="categories-title title">
+                                        {formattedSlug}
+                                    </h3>
+
                                 </div>
                             </div>
                         </div>
@@ -36,22 +57,25 @@ export default function Home() {
                             <div class="row">
 
                                 <div class="col-md-8 grid-sidebar" id="content">
-                                    <div class="jl_wrapper_cat">
-
-                                        <div className="jl_grid_bellow_mian">
-                                            <div id="content_masonry">
-
-                                                <EachElement of={posts} render={(item, index) => (
-                                                    <BlogCard post={item} />
-                                                )} />
-
+                                    <div className="jl_wrapper_cat">
+                                        {loading ? (
+                                            <h2>Loading..............</h2>
+                                        ) : posts && posts.length === 0 ? (
+                                            <h2>No posts available</h2>
+                                        ) : (
+                                            <div className="jl_grid_bellow_mian">
+                                                <div id="content_masonry">
+                                                    <EachElement of={posts || []} render={(item, index) => (
+                                                        <BlogCard post={item} key={index} />
+                                                    )} />
+                                                </div>
                                             </div>
-                                        </div>
-
+                                        )}
                                     </div>
+
                                 </div>
 
-                                <BlogSideBar posts={posts} />
+                                <BlogSideBar />
 
                             </div>
 
@@ -60,8 +84,8 @@ export default function Home() {
                     </div>
 
                 </div>
-            </div>
+            </div >
 
-        </UserLayout>
+        </UserLayout >
     );
 }

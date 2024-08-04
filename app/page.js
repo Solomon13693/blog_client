@@ -1,11 +1,23 @@
+'use client'
 import BlogSideBar from '@/components/Blog/BlogSideBar';
 import UserLayout from './UserLayout'
 import Hero from '@/components/Home/Hero';
-import posts from '@/json/posts.json'
 import BlogCard from '@/components/Blog/BlogCard';
 import { EachElement } from '@/utils/Each';
+import userServices from '@/services/userServices';
+import useFetchData from '@/utils/useFetchData';
 
 export default function Home() {
+
+  const fetchFunction = () => userServices.getPosts();
+
+  const { data, loading, error, refetch } = useFetchData(fetchFunction,
+    [],
+    []
+  );
+
+  const posts = data?.posts || []
+
   return (
     <UserLayout>
 
@@ -16,7 +28,15 @@ export default function Home() {
 
             <div className="container">
 
-              <Hero posts={posts} />
+              {loading ? (
+
+                <h2 className='mt-5'>Loading..............</h2>
+
+              ) : (
+
+                <Hero posts={posts} />
+
+              )}
 
               <div class="row">
 
@@ -26,9 +46,9 @@ export default function Home() {
                     <div className="jl_grid_bellow_mian">
                       <div id="content_masonry">
 
-                        <EachElement of={posts} render={(item, index) => (
-                          <BlogCard post={item} />
-                        )} />
+                          <EachElement of={posts.slice(5) || []} render={(item, index) => (
+                            <BlogCard post={item} />
+                          )} />
 
                       </div>
                     </div>
@@ -36,7 +56,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <BlogSideBar posts={posts} />
+                <BlogSideBar />
 
               </div>
 

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Category from '@/public/images/category.jpg';
 import moment from 'moment';
 import Link from 'next/link';
+import Avatar from '../Avatar';
 
 function CardOne({ post, className }) {
 
@@ -11,43 +12,46 @@ function CardOne({ post, className }) {
                 <div className="black-overlay"></div>
                 <span
                     className="image_grid_header_absolute"
-                    style={{ backgroundImage: `url(${Category.src})` }}
+                    style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_POST}/${post?.image})`, backgroundPosition: 'center top' }}
                 ></span>
                 <Link
-                    href={`/post/${post.slug}`}
+                    href={`/post/${post?.slug}`}
                     className="link_grid_header_absolute"
-                    title={post.title}
+                    title={post?.title}
                 ></Link>
                 <span className="meta-category-small">
                     <Link
                         className="post-category-color-text"
                         style={{ background: '#7fbc1e' }}
-                        href={`/category/${post.category}`}
+                        href={`/category/${post?.category?.name.toLowerCase().replace(/ /g, '+')}`}
                     >
-                        {post.category}
+                        {post?.category?.name}
                     </Link>
                 </span>
                 <div className="wrap_box_style_main image-post-title">
                     <h3 className="image-post-title">
-                        <Link href={`/post/${post.slug}`}>
-                            {post.title}
+                        <Link href={`/post/${post?.slug}`} className=' line-clamp-2'>
+                            {post?.title}
                         </Link>
                     </h3>
-                    <span className="jl_post_meta">
+                    <span className="jl_post_meta flex items-center">
                         <span className="jl_author_img_w">
-                            <Image
-                                src="/images/author.jpg"
-                                width={30}
-                                height={30}
-                                alt="Anna Nikova"
-                                className="avatar avatar-30 wp-user-avatar wp-user-avatar-30 alignnone photo"
-                            />
-                            <Link href={`/author/${post.author}`} title={post.author} rel="author">
-                                {post.author}
-                            </Link>
+
+                            {post?.author?.image ? (
+                                <img
+                                    src={`${process.env.NEXT_PUBLIC_PROFILE}/${post?.author?.image}`}
+                                    width="50"
+                                    height="50"
+                                    alt={post?.author?.name}
+                                    className="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo"
+                                />
+                            ) : (
+                                <Avatar name={post?.author?.name} textColor='text-dark' bgColor='bg-primary' size='w-10 h-10' fontSize='text-[9px]' />
+                            )}
+
                         </span>
-                        <span style={{ paddingTop: '10px' }} className="post-date">
-                            <i className="fa fa-clock-o"></i> {moment(post.created_at).format('llll')}
+                        <span style={{ paddingTop: '5px' }} className="post-date">
+                            <i className="fa fa-clock-o"></i> {moment(post?.createdAt).format('llll')}
                         </span>
                     </span>
                 </div>

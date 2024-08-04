@@ -5,7 +5,6 @@ const analyticsSlice = createSlice({
   initialState: {
     analytics: null,
     chart: null,
-    categories: null,
   },
   reducers: {
     setAnalytics: (state, action) => {
