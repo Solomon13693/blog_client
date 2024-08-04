@@ -4,7 +4,7 @@ import Analytics from '@/components/dashboard/admin/Analytics'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib'
 
-const page = async () => {
+const page = async ({ token }) => {
 
   const session = await getServerSession(authOptions)
 

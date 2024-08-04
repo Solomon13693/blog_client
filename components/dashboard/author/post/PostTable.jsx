@@ -105,7 +105,7 @@ const PostTable = ({ posts, token, fetchData, isAdmin }) => {
                                                 <td className="px-6 py-3 whitespace-nowrap">
                                                     <div className="">
                                                         <span className="block text-xs text-textColor">
-                                                            {post.category.name}
+                                                            {post?.category?.name}
                                                         </span>
                                                     </div>
                                                 </td>
@@ -113,7 +113,7 @@ const PostTable = ({ posts, token, fetchData, isAdmin }) => {
                                                     <td className="px-6 py-3 whitespace-nowrap">
                                                     <div className="">
                                                         <span className="block text-xs text-textColor">
-                                                            {post.author.name}
+                                                            {post?.author?.name}
                                                         </span>
                                                     </div>
                                                 </td>
