@@ -33,11 +33,11 @@ const BlogSideBar = () => {
   // }, []);
 
   const dispatch = useDispatch();
-  const categories = useSelector(getCategories);
+  const categories = useSelector(getCategories) || [];
   const loading = useSelector(getLoading);
 
   // RECENT POSTS
-  const posts = useSelector(getRecentPost);
+  const posts = useSelector(getRecentPost) || [];
   const isLoading = useSelector(getRecentLoading);
 
   useEffect(() => {
@@ -116,7 +116,7 @@ const BlogSideBar = () => {
 
                     <div className="item-details">
                       <span className="meta-category-small">
-                        <Link className="post-category-color-text" style={{ background: '#d800f9' }} href={`/category/${item.category.name.toLowerCase().replace(/ /g, '+')}`}> {item.category.name} </Link>
+                        <Link className="post-category-color-text" style={{ background: '#d800f9' }} href={`/category/${item?.category?.name?.toLowerCase()?.replace(/ /g, '+')}`}> {item?.category?.name} </Link>
                       </span>
                       <h3 className="feature-post-title">
                         <Link className=' line-clamp-1' href={`/post/${item.slug}`}> {item.title} </Link>
