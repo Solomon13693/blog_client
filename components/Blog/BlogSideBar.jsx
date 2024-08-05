@@ -62,7 +62,7 @@ const BlogSideBar = () => {
 
               {loading ? (
 
-                <Skeleton height={50} count={7} />
+                <Skeleton height={50} count={5} />
 
               ) : (
 
@@ -101,34 +101,44 @@ const BlogSideBar = () => {
             </div>
             <div>
               <ul className="feature-post-list recent-post-widget">
-                <EachElement of={posts} render={(item, index) => (
-                  <li key={index}>
-                    <Link href={`/post/${item.slug}`} className="jl_small_format feature-image-link image_post featured-thumbnail" title={item.title}>
-                      <img
-                        width="120"
-                        height="120"
-                        src={`${process.env.NEXT_PUBLIC_POST}/${item.image}`}
-                        className="attachment-disto_small_feature recent_post_image size-disto_small_feature wp-post-image"
-                        alt=""
-                      />
-                      <div className="background_over_image"></div>
-                    </Link>
 
-                    <div className="item-details">
-                      <span className="meta-category-small">
-                        <Link className="post-category-color-text" style={{ background: '#d800f9' }} href={`/category/${item?.category?.name?.toLowerCase()?.replace(/ /g, '+')}`}> {item?.category?.name} </Link>
-                      </span>
-                      <h3 className="feature-post-title">
-                        <Link className=' line-clamp-1' href={`/post/${item.slug}`}> {item.title} </Link>
-                      </h3>
-                      <span className="post-meta meta-main-img auto_image_with_date">
-                        <span className="post-date">
-                          <i className="fa fa-clock-o"></i> {moment(item.createdAt).format('lll')}
+                {isLoading ? (
+
+                  <Skeleton height={90} count={4} />
+
+                ) : (
+
+                  <EachElement of={posts} render={(item, index) => (
+                    <li key={index}>
+                      <Link href={`/post/${item.slug}`} className="jl_small_format feature-image-link image_post featured-thumbnail" title={item.title}>
+                        <img
+                          width="120"
+                          height="120"
+                          src={`${process.env.NEXT_PUBLIC_POST}/${item.image}`}
+                          className="attachment-disto_small_feature recent_post_image size-disto_small_feature wp-post-image"
+                          alt=""
+                        />
+                        <div className="background_over_image"></div>
+                      </Link>
+
+                      <div className="item-details">
+                        <span className="meta-category-small">
+                          <Link className="post-category-color-text" style={{ background: '#d800f9' }} href={`/category/${item?.category?.name?.toLowerCase()?.replace(/ /g, '+')}`}> {item?.category?.name} </Link>
                         </span>
-                      </span>
-                    </div>
-                  </li>
-                )} />
+                        <h3 className="feature-post-title">
+                          <Link className=' line-clamp-1' href={`/post/${item.slug}`}> {item.title} </Link>
+                        </h3>
+                        <span className="post-meta meta-main-img auto_image_with_date">
+                          <span className="post-date">
+                            <i className="fa fa-clock-o"></i> {moment(item.createdAt).format('lll')}
+                          </span>
+                        </span>
+                      </div>
+                    </li>
+                  )} />
+
+                )}
+
               </ul>
             </div>
             <span className="jl_none_space"></span>

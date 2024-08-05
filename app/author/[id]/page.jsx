@@ -60,7 +60,7 @@ export default function page({ params }) {
                                     <div className="jl_wrapper_cat">
                                         {loading ? (
                                             <h2>Loading..............</h2>
-                                        ) : posts && posts.length === 0 ? (
+                                        ) : posts && posts.length == 0 || !posts ? (
                                             <h2>No posts available</h2>
                                         ) : (
                                             <div className="jl_grid_bellow_mian">
